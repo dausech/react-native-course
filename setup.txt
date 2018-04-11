@@ -1,0 +1,15 @@
+
+para criar um novo projeto - cria inclusive uma nova pasta com o nome do projeto especificado:
+react-native init albums
+
+dentro da pasta do projeto
+instalar dependencias - somente para desenvolvimento
+npm install --save-dev eslint-config-rallycoding
+
+instalar dependencias do projeto:
+npm install --save firebase
+npm install --save redux react-redux
+
+
+executar o aplicativo:
+react-native run-android
