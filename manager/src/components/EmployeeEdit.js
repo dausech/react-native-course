@@ -1,32 +1,40 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { employeeUpdate } from '../actions';
+import EmployeeForm from './EmployeeForm';
 import { Card, CardSection, Button } from './common';
-import { employeeUpdate, employeeCreate } from '../actions';
-import EmployeeForm from './EmployeeForm'; 
 
-class EmployeeCreate extends Component {
-    onButtonPress() {
-        const { name, phone, shift } = this.props;
-        this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+class EmployeeEdit extends Component {
+
+    componentWillMount() {
+        _.each(this.props.employee, (value, prop) => {
+            this.props.employeeUpdate({ prop, value });
+        });
     }
 
-    render() {        
+    onButtonPress() {
+        const { name, phone, shift } = this.props;
+
+        console.log(name, phone, shift);
+    }
+
+    render() {
         return (
             <Card>
-                <EmployeeForm {...this.props} />
+                <EmployeeForm  />
                 <CardSection>
                     <Button onPress={this.onButtonPress.bind(this)}>
-                        Create
+                        Save Changes
                     </Button>
                 </CardSection>
             </Card>
         );
-    }
+    };
 }
 
 const mapStateToProps = (state) => {
     const { name, phone, shift } = state.employeeForm;
     return { name, phone, shift };
 }
-
-export default connect(mapStateToProps, { employeeUpdate, employeeCreate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeEdit);
