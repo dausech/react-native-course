@@ -17,4 +17,9 @@ buck-out/
 android/app/libs
 android/keystores/debug.keystore
 
+
+# react-native-config
+.env
+
+
  
