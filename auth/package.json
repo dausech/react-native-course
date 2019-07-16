@@ -7,11 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
-    "firebase": "^4.12.1",
-    "npm": "^5.8.0",
+    "firebase": "^4.13.1",
+    "npm": "^5.10.0",
     "react": "16.3.0-alpha.1",
-    "react-native": "0.54.3",
-    "react-native-config": "^0.11.5"
+    "react-native": "^0.60.3",
+    "react-native-config": "^0.11.7"
   },
   "devDependencies": {
     "babel-jest": "22.4.3",
